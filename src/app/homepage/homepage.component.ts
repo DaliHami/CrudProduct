@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../Models/product';
 import { productsService } from '../services/products.service';
@@ -10,8 +10,9 @@ import { productsService } from '../services/products.service';
 })
 export class HomepageComponent implements OnInit {
   productList!: Product[];
-  constructor(private productsservice: productsService, private router: Router ) {}
 
+  constructor(private productsservice: productsService, private router: Router ) {}
+  @Input() search: String = ""
   ngOnInit(): void {
     this.productsservice.getallproducts().subscribe({
       next: (data) => {
@@ -45,5 +46,21 @@ export class HomepageComponent implements OnInit {
 
   addproduct ():void {
     this.router.navigateByUrl('addproduct');
+  }
+
+  searchProduct()
+  {
+    if (this.search != "")
+    {
+      this.productList = this.productList.filter(
+        res=>{
+          return res.name.toLocaleLowerCase().match(this.search.toLocaleLowerCase());
+        }
+       )
+    }
+    else if (this.search==="")
+    {
+     this.ngOnInit()
+    }
   }
 }

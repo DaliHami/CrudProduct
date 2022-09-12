@@ -1,6 +1,9 @@
 <div>
   <button mat-raised-button color="primary" (click)="addproduct()">Add Product</button>
+  <input matInput placeholder="Search"  name="search" [(ngModel)]="search" (input)="searchProduct()">
   <div *ngFor="let product of productList;let i = index">
+
+
     <mat-card class="example-card">
       <mat-card-header>
         <mat-card-title>{{product.name}}</mat-card-title>

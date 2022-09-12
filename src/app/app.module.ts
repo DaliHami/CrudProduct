@@ -33,7 +33,7 @@ import { AddproductComponent } from './addproduct/addproduct.component';
     SignupComponent,
     HomepageComponent,
     ProductdetailsComponent,
-    AddproductComponent
+    AddproductComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +49,7 @@ import { AddproductComponent } from './addproduct/addproduct.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+
 
 
 
