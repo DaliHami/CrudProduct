@@ -19,7 +19,7 @@ export class AddproductComponent implements OnInit {
    }
   constructor(public datepipe: DatePipe, private productservice:productsService, private router: Router) { }
   addproductForm = new FormGroup({
-    name: new FormControl('', Validators.required),
+    name: new FormControl('', [Validators.required]),
     description: new FormControl('', Validators.required),
     price: new FormControl('', Validators.required),
   });

@@ -1,10 +1,9 @@
-<div>
-  <button mat-raised-button color="primary" (click)="addproduct()">Add Product</button>
+<div class="container">
+  <button mat-raised-button color="primary" (click)="addproduct()" class="mb-4">Add Product</button>
   <input matInput placeholder="Search"  name="search" [(ngModel)]="search" (input)="searchProduct()">
-  <div *ngFor="let product of productList;let i = index">
-
-
-    <mat-card class="example-card">
+  <div class="row">
+  <div *ngFor="let product of productList;let i = index" class="col-6 d-flex align-items-stretch mb-4" >
+    <mat-card  >
       <mat-card-header>
         <mat-card-title>{{product.name}}</mat-card-title>
       </mat-card-header>
@@ -28,4 +27,5 @@
       </mat-card-actions>
     </mat-card>
   </div>
+</div>
 </div>
