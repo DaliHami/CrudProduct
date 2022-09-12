@@ -1,0 +1,27 @@
+<div fxLayoutAlign="center center" fxFlexFill class="main-div">
+  <mat-card fxFlex="25">
+
+      <mat-card>
+        <form [formGroup]="signUpForm" (ngSubmit) = "signup(signUpForm.value)"  class="login-form">
+          <mat-toolbar color="accent">
+            <span>SingUp</span>
+          </mat-toolbar>
+          <mat-form-field fxLaoutAlign="stretch" fxLayout="column">
+            <input matInput placeholder="UserName" formControlName="userName" name="userName" ngModel="userName"/>
+          </mat-form-field>
+
+          <mat-form-field fxLaoutAlign="stretch" fxLayout="column">
+            <input matInput placeholder="Password" formControlName="passWord"  name="passWord" ngModel="passWord" />
+          </mat-form-field>
+
+          <mat-form-field fxLaoutAlign="stretch" fxLayout="column">
+            <input matInput placeholder="Password" formControlName="passWordConfirm"  name="passWordConfirm" ngModel="passWordConfirm"/>
+          </mat-form-field>
+
+          <button mat-raised-button [routerLink]="['']" type="submit" color="accent" fxLayoutAlign="center center" >Login</button>
+          <button mat-raised-button [routerLink]="['/singup']" type="submit" color="accent" fxLayoutAlign="center center" >SingUp</button>
+        </form>
+      </mat-card>
+
+  </mat-card>
+</div>

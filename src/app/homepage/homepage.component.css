@@ -1,0 +1,17 @@
+.container {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 11px 16px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Product Product2 Product3"
+    ". . ."
+    ". . .";
+    justify-content: center;
+}
+
+.Product { grid-area: Product; }
+
+.Product2 { grid-area: Product2; }
+
+.Product3 { grid-area: Product3; }

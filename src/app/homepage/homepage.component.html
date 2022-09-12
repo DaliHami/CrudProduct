@@ -1,0 +1,28 @@
+<div>
+  <button mat-raised-button color="primary" (click)="addproduct()">Add Product</button>
+  <div *ngFor="let product of productList;let i = index">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>{{product.name}}</mat-card-title>
+      </mat-card-header>
+      <img
+        mat-card-image
+        style="width: 150px"
+        src="https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg"
+        alt="Angular Logo"
+      />
+      <mat-card-content>
+        <p>
+          {{product.description}}
+        </p>
+        <h4>Price:{{product.price}}$</h4>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-raised-button color="accent" (click)="gotodetails(product.id)">Update</button>
+        <button mat-raised-button color="primary" (click)="removeproduct(product.id,i)">Delete</button>
+
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

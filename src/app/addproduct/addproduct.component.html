@@ -1,0 +1,16 @@
+<div class="example-container">
+  <form [formGroup]="addproductForm" (ngSubmit) = "addProduct(addproductForm.value)"  class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Product Name" formControlName="name" name="name" ngModel="name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="description" formControlName="description" name="description" ngModel="description"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Price" formControlName="price" name="price" ngModel="price">
+  </mat-form-field>
+  <button mat-raised-button  type="submit" color="accent" fxLayoutAlign="center center" >Add Product</button>
+</form>
+</div>

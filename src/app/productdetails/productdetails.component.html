@@ -1,0 +1,28 @@
+<div>
+  <div>
+    <mat-card class="example-card">
+      <form [formGroup]="updateForm" (ngSubmit) = "updateProduct(updateForm.value)"  class="login-form">
+      <mat-card-header>
+        <mat-card-title>
+          <input placeholder={{product.name}} [(ngModel)]="product.name" formControlName="name" name="name"/>
+        </mat-card-title>
+      </mat-card-header>
+      <img
+        mat-card-image
+        style="width: 150px"
+        src="https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg"
+        alt="Angular Logo"
+      />
+      <mat-card-content>
+        <textarea matInput placeholder={{product.description}} [(ngModel)]="product.description" formControlName="description" name="description"></textarea>
+        <input placeholder={{product.price}} [(ngModel)]="product.price" type="number" formControlName="price" name="price"/>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-raised-button color="accent" >Update</button>
+
+      </mat-card-actions>
+    </form>
+    </mat-card>
+  </div>
+</div>
